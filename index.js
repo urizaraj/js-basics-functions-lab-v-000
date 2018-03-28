@@ -9,3 +9,15 @@ function distanceFromHqInFeet(block) {
 function distanceTravelledInFeet(start, end) {
   return Math.abs(start - end) * 264
 }
+
+function calculatesFarePrice(start, end) {
+  distance = distanceTravelledInFeet(start, end)
+  switch (true) {
+    case distance > 2500:
+      return 'cannot travel that far'
+    case distance < 400:
+      return 0
+    default:
+      return (distance - 400) * 0.02
+  }
+}
